@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  p {
+    flex-direction: row;
+    padding: 0 40px;
+  }
+}
