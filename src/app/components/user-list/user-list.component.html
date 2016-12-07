@@ -1,34 +1,27 @@
 <h1>{{ $ctrl.test }}</h1>
 
-<div class="heading">
-    <h2 class="heading-flex-item">Last</h2>
-    <h2>First</h2>
-    <h2>Username</h2>
-    <h2>Phone</h2>
-    <h2>Location</h2>
+<div class="heading-flex-container">
+    <div class="flex-item">&nbsp;</div>
+    <div class="flex-item">Last</div>
+    <div class="flex-item">First</div>
+    <div class="flex-item">Username</div>
+    <div class="flex-item">Phone</div>
+    <div class="flex-item">Location</div>
+    <div class="flex-item">&nbsp;</div>
 </div>
-
-<div class="wrapper">
+<div class="flex-container" ng-repeat="user in $ctrl.users" ng-class-odd="'column-bg'">
     <div class="flex-item">
-        <div class="img-wrapper" ng-repeat="user in $ctrl.users">
-            <img src="{{user.avatarUrl}}" class="avatar" alt="">
+        <div class="img-wrapper">
+            <img src="{{user.picture.medium}}" class="avatar" alt="">
         </div>
     </div>
-    <div class="flex-item">
-        <p ng-repeat="user in $ctrl.users" class="capitalize">{{ user.lastName }}</p>
-    </div>
-    <div class="flex-item">
-        <p ng-repeat="user in $ctrl.users" class="capitalize">{{ user.firstName }}</p>
-    </div>
-    <div class="flex-item">
-        <p ng-repeat="user in $ctrl.users">{{ user.username }}</p>
-    </div>
-    <div class="flex-item">
-        <p ng-repeat="user in $ctrl.users">{{ user.phone }}</p>
-    </div>
-    <div class="flex-item">
-        <p ng-repeat="user in $ctrl.users">{{ user.location }}</p>
-    </div>
+    <div class="flex-item capitalize">{{user.name.last}}</div>
+    <div class="flex-item capitalize">{{user.name.first}}</div>
+    <div class="flex-item">{{user.login.username}}</div>
+    <div class="flex-item">{{user.phone}}</div>
+    <div class="flex-item capitalize">{{user.location.city}}</div>
+    <div class="flex-item"><img ng-click="$ctrl.chooseUser(user)" class="info-button" src="/app/images/add.svg" alt="info"></div>
 </div>
-<a href="" ng-click="$ctrl.asd()">detail</a>
-<a ui-sref="detail({id:1})">asd</a>
+<user-detail chosen-user="$ctrl.chosenUser"></user-detail>
+<!--<a href="" ng-click="$ctrl.asd()">detail</a>
+<a ui-sref="detail({id:1})">detail</a>-->

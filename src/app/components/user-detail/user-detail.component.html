@@ -1,0 +1,19 @@
+<div ng-if="$ctrl.chosenUser">
+    <h2 class="detail-name capitalize">{{$ctrl.chosenUser.name.first}}</h2>
+    <div class="flex-wrapper">
+        <ul class="detail-flex-container">
+            <li class="detail-flex-item"><span>Username</span> {{$ctrl.chosenUser.login.username}}</li>
+            <li class="detail-flex-item"><span>Address</span> {{$ctrl.chosenUser.location.street}}</li>
+            <li class="detail-flex-item"><span>Birthday</span> {{$ctrl.chosenUser.dob}}</li>
+            <li class="detail-flex-item"><span>Registered</span> {{$ctrl.chosenUser.registered}}</li>
+            <li class="detail-flex-item capitalize"><span>City</span> {{$ctrl.chosenUser.location.city}}</li>
+            <li class="detail-flex-item"><span>Phone</span> {{$ctrl.chosenUser.phone}}</li>
+            <li class="detail-flex-item"><span>Email</span> {{$ctrl.chosenUser.email}}</li>
+            <li class="detail-flex-item"><span>Zip code</span> {{$ctrl.chosenUser.location.postcode}}</li>
+            <li class="detail-flex-item"><span>Cell</span> {{$ctrl.chosenUser.cell}}</li>
+        </ul>
+        <div class="picture-wrapper">
+            <img class="avatar-large" src="{{$ctrl.chosenUser.picture.large}}" alt="">
+        </div>
+    </div>
+</div>
