@@ -1,9 +1,33 @@
 .wrapper {
   display: flex;
   justify-content: center;
+}
 
-  p {
+.heading {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.flex-item {
     flex-direction: row;
     padding: 0 40px;
-  }
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
+
+.img-wrapper {
+  // background-color: #fff;
+  // border-radius: 50%;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.column-bg {
+  background-color: #ccc;
 }

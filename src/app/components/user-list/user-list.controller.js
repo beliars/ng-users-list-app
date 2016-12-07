@@ -13,18 +13,22 @@ export default class UserListController{
     }
 
     $onInit() {
-        this.test = 'Ng-App';
+        this.test = 'NgUsersListApp';
         this.userListService.getUser().then(user => {
             console.log(user);
+            console.log(user.data.results.length);
             this.users = [];
-            this.user = {
-                'avatar': user.data.results[0].picture.large,
-                'firstName': user.data.results[0].name.first,
-                'lastName': user.data.results[0].name.last,
-                'username': user.data.results[0].login.username,
-                'phone': user.data.results[0].phone,
-                'location': user.data.results[0].location.city
-            };
+            for (let i = 0; i < user.data.results.length; i++) {
+                let item = {
+                'avatarUrl': user.data.results[i].picture.medium,
+                'firstName': user.data.results[i].name.first,
+                'lastName': user.data.results[i].name.last,
+                'username': user.data.results[i].login.username,
+                'phone': user.data.results[i].phone,
+                'location': user.data.results[i].location.city
+                };
+                this.users.push(item);
+            }
         });
     }
 }
