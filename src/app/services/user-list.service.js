@@ -4,7 +4,7 @@ export class UserListService {
     this.$http = $http;
   }
   
-  getUser() {
+  getUsers() {
     return this.$http.get('https://randomuser.me/api/?results=10').success(res => res);
   }
 }

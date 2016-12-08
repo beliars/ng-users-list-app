@@ -1,4 +1,4 @@
-<h1>{{ $ctrl.test }}</h1>
+<h1>{{ $ctrl.heading }}<button ng-click="$ctrl.showChart()" class="chart-button">Show chart</button></h1>
 
 <div class="heading-flex-container">
     <div class="flex-item">&nbsp;</div>
@@ -13,7 +13,7 @@
     <div class="flex-container">
         <div class="flex-item">
             <div class="img-wrapper">
-                <img src="{{user.picture.medium}}" class="avatar" alt="">
+                <img ng-src="{{user.picture.medium}}" class="avatar" alt="">
             </div>
         </div>
         <div class="flex-item capitalize">{{user.name.last}}</div>
@@ -21,7 +21,7 @@
         <div class="flex-item">{{user.login.username}}</div>
         <div class="flex-item">{{user.phone}}</div>
         <div class="flex-item capitalize">{{user.location.city}}</div>
-        <div class="flex-item"><img ng-click="$ctrl.chooseUser(user)" class="info-button" src="/app/images/add.svg" alt="info"></div>
+        <div class="flex-item"><img ng-click="$ctrl.chooseUser(user)" class="info-button" ng-src="/app/images/add.svg" alt="info"></div>
     </div>
     <user-detail ng-show="$ctrl.chosenUser == user" chosen-user="$ctrl.chosenUser"></user-detail>
 </div>
