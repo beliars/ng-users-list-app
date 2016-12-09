@@ -9,6 +9,11 @@ export default class UserListController {
         this.userListService = UserListService;
         this.choose = false;
         this.chosenUser = false;
+        this.showGender = false;
+        this.usersGender = {
+            male: 0,
+            female: 0
+        };
     }
 
     $onInit() {
@@ -19,6 +24,7 @@ export default class UserListController {
     }
 
     chooseUser(user) {
+        
         if (!this.choose && !this.chosenUser) {
             this.choose = true;
             this.chosenUser = user;
@@ -36,18 +42,20 @@ export default class UserListController {
     }
 
     showChart() {
-        let count = 0,
-            male = 0,
-            female = 0;
+
+        this.showGender = !this.showGender;
+        let count = 0;
         for (let i = 0; i < this.users.length; i++) {
             if (this.users[i].gender.indexOf('male') == 0) {
                 count++;
             }
         }
-        male = (count / this.users.length) * 100;
-        female = 100 - male;
-        console.log(`Male = ${male}%`);
-        console.log(`Female = ${female}%`);
+        this.usersGender.male = (count / this.users.length) * 100;
+        this.usersGender.female = 100 - this.usersGender.male;
+    }
+
+    closeModal() {
+        this.showGender = false;
     }
 
     asd() {

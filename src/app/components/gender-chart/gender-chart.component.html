@@ -1,0 +1,11 @@
+<div chart-modal-directive class="modal">
+    <div class="modal-content">
+    <span ng-click="$ctrl.onClose()" class="close">&times;</span>
+        <p class="male">Male: {{$ctrl.usersGender.male}}%</p>
+        <p class="female">Female: {{$ctrl.usersGender.female}}%</p>
+        <canvas id="pie" class="chart chart-pie"
+           chart-data="$ctrl.data" chart-labels="$ctrl.labels" chart-colors="$ctrl.colors">
+        </canvas> 
+    </div>
+    <div ng-click="$ctrl.onClose()" class="modal-bg"></div>
+</div>

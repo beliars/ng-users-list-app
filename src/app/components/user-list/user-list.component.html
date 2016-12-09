@@ -1,5 +1,7 @@
 <h1>{{ $ctrl.heading }}<button ng-click="$ctrl.showChart()" class="chart-button">Show chart</button></h1>
 
+<gender-chart ng-if="$ctrl.showGender" users-gender="$ctrl.usersGender" on-close="$ctrl.closeModal()"></gender-chart>
+
 <div class="heading-flex-container">
     <div class="flex-item">&nbsp;</div>
     <div class="flex-item">Last</div>
@@ -9,6 +11,7 @@
     <div class="flex-item">Location</div>
     <div class="flex-item">&nbsp;</div>
 </div>
+
 <div ng-repeat="user in $ctrl.users" ng-class-odd="'column-bg'">
     <div class="flex-container">
         <div class="flex-item">
