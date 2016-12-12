@@ -21,6 +21,7 @@ export class ChartModalDirective {
         elem.on('click', (e) => {
             e.preventDefault();
             const del = body.find('chart-modal-directive')[0];
+            console.log('!!!!!!del');
             console.log(del);
             if (del) {
                 del.remove();
@@ -35,7 +36,8 @@ export class ChartModalDirective {
 }
 
 class ChartModalDirectiveController {
-    constructor() {
+    constructor($scope) {
+        console.log($scope);
         this.test = 'TEST';
         this.colors = ["rgb(82,130,199)","rgb(220,104,80)"];
         this.labels = ['Male', 'Female'];
