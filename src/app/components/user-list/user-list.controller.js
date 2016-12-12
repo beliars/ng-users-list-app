@@ -42,7 +42,6 @@ export default class UserListController {
     }
 
     showChart() {
-
         this.showGender = !this.showGender;
         let count = 0;
         for (let i = 0; i < this.users.length; i++) {
